@@ -1,1 +1,184 @@
+list1=[1,2,3,4,5,6,7,8,9,10]
+odd=[]
+odds=[]
+eve=[]
+even=[]
+for i in range(11):
+    if (i%2==0):
+        eve.append(i)
+        even.append(i*i)
+    else:
+        odd.append(i)
+        odds.append(i*i)
+print("The even numbers are:",eve)
+print("The squares of the even numbers are:",even)
+print("The odd numbers are:",odd)
+print("The squares of the odd numbers are:",odds)
+
+
+
+
+#question2
+st=[4,6,7,9,120]
+h=0
+su=0
+for i in st:
+  if i>h:
+    h=i
+  else:
+    su=i
+
+print(h,su)
+
+
+#3 question
+st=[4,2,3,5,7,8,9]
+gb=0
+sg=0
+for i in st:
+  if i>gb:
+    gb=i
+  else:
+    sg=i
+print(f"second largest number is {gb}\n second smallest number is {sg}")
+
+
+#question4
+st=[3,4,5,6,7,8,9]
+sg=len(st)
+gb=0
+for i in range(0,sg):
+  for j in range(i+1,sg-1):
+    if st[i]<gb:
+      st[i]=gb
+print(st)
+
+
+#question5
+st=[45,67,83,24,55,87,77,34]
+k=int(input("Enter the number"))
+c=0
+for i in st:
+  c+=1
+  if i==k:
+    break
+print(f"the position of {k} is : {c-1}")
+
+
+
+#question6
+def most_frequent(list1):
+    count_dict = dict()
+    for ele in list1:
+        if ele not in count_dict:
+            count_dict[ele] = 1
+        else:
+            count_dict[ele] += 1
+    max_count = 0
+    most_frequent_ele = None
+    for ele, count in count_dict.items():
+        if count > max_count:
+            max_count = count
+            most_frequent_ele = ele
+    return most_frequent_ele
+list1 = [4, 5, 6, 4, 6, 7, 4, 2, 4, 8, 4]
+print(most_frequent(list1))
+
+
+
+
+#question7
+p={}
+n=['ten','twenty','thirty']
+v=[10,20,30]
+for i in range(len(n)):
+  p[n[i]]=v[i]
+print(p)
+
+
+#question8
+print("candidates: virat kholi dhoni")
+print("1 for virat as well as enter 2 and 3 for kholi and dhoni then 4 for nota")
+voters=["nisa","nithi","pavi","viji","leas","gaut","navin","prakesh","eni","praveen"]
+
+v=0
+k=0
+d=0
+n=0
+for i in voters:
+    vote=int(input(f"voters-{i}: "))
+    if vote==1:
+        v+=1
+    elif vote==2:
+        k+=1
+    elif vote==3:
+        d+=1
+    else:
+        n+=1
+
+print(f"virat count={v}",f"kholi count: {k}",f"dhoni count: {d}",f"nota count: {n}",sep="\n")
+
+if(v > k or d or n):
+    print("Winner virat")
+elif(k > v or d or n):
+    print("winner kholi")
+elif(d > n or k or v):
+    print("winner dhoni")
+elif(n > v or k or d):
+   print("nota")
+
+
+#question9
+def inr_to_usd(amount_inr):
+    # Conversion rate from INR to USD
+    conversion_rate = 0.014
+    amount_usd = amount_inr * conversion_rate
+    return amount_usd
+
+def celsius_to_fahrenheit(celsius):
+    fahrenheit = (celsius * 9/5) + 32
+    return fahrenheit
+
+def calculate_bmi(weight_kg, height_m):
+    bmi = weight_kg / (height_m ** 2)
+    return bmi
+
+def calculate_simple_interest(principal, rate, time):
+    simple_interest = (principal * rate * time) / 100
+    return simple_interest
+
+amount_inr = 1000
+amount_usd = inr_to_usd(amount_inr)
+print(f"{amount_inr} INR is equal to {amount_usd:.2f} USD")
+
+celsius = 30
+fahrenheit = celsius_to_fahrenheit(celsius)
+print(f"{celsius} Celsius is equal to {fahrenheit:.2f} Fahrenheit")
+
+weight_kg = 70
+height_m = 1.75
+bmi = calculate_bmi(weight_kg, height_m)
+print(f"The BMI is: {bmi:.2f}")
+
+principal = 1000
+rate = 5
+time = 2
+simple_interest = calculate_simple_interest(principal, rate, time)
+print(f"The simple interest is: {simple_interest:.2f}")
+
+
+# @title
+#question10
+import random
+
+def get_zeros_ones(length):
+  zeros_ones = []
+  for _ in range(length):
+    random_bool = random.random() < 0.5
+    zeros_ones.append(int(random_bool))
+
+  return zeros_ones
+list_length = 10
+zeros_ones_list = get_zeros_ones(list_length)
+print(zeros_ones_list)
 
